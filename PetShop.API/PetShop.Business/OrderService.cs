@@ -11,7 +11,7 @@ using Order = PetShop.DBAccess.Order;
 
 namespace PetShop.Business
 {
-    public class OrderService 
+    public class OrderService
     {
 
 
@@ -28,6 +28,12 @@ namespace PetShop.Business
             using (var context = new PetShopContext())
             {
                 context.Orders.AddOrUpdate(orderData);
+                var product = context.Products.Find(order.ProductId);
+                if (order.Quantity > product.Quantity)
+                {
+                    throw new DataMisalignedException("quantity more than available");
+                }
+                product.Quantity -= order.Quantity;
                 context.SaveChanges();
             }
 

@@ -22,13 +22,13 @@ namespace PetShop.Business
             using (var context = new PetShopContext())
             {
                 var query = from product in context.Products
-                    select
-                        new Model.Product
-                        {
-                            ProductId = product.ProductId,
-                            ProductName = product.ProductName,
-                            AvailableQuantity = product.Quantity
-                        };
+                            select
+                                new Model.Product
+                                {
+                                    ProductId =  product.ProductId,
+                                    ProductName = product.ProductName,
+                                    AvailableQuantity = product.Quantity
+                                };
                 return query.ToList();
             }
         }
@@ -38,7 +38,7 @@ namespace PetShop.Business
             var dbProduct = new DBAccess.Product
             {
  
-                ProductId = product.ProductId,
+                ProductId = product.ProductId == Guid.Empty ? Guid.NewGuid() : product.ProductId,
                 ProductName = product.ProductName,
                 Quantity = product.AvailableQuantity
             };

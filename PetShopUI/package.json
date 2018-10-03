@@ -20,6 +20,9 @@
     "@angular/platform-browser": "^6.0.2",
     "@angular/platform-browser-dynamic": "^6.0.2",
     "@angular/router": "^6.0.2",
+    "ag-grid": "^18.1.2",
+    "ag-grid-angular": "^19.0.0",
+    "angular2-uuid": "^1.1.1",
     "core-js": "^2.5.4",
     "rxjs": "^6.0.0",
     "zone.js": "^0.8.26"

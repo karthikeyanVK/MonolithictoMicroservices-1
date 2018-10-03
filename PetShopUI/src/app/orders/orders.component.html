@@ -1,13 +1,29 @@
-<title>  Products</title>
-<p>
-  Enter Product Details
-</p>
 <div class="form-group">
-  <label for="productName">Select Product:</label>
-  <input type="text" class="form-control" >
-</div>
-<div class="form-group">
-  <label for="Quantity">Quantity:</label>
-  <input type="text" class="form-control">
-</div>
-<button type="button" (click)="addProduct();" class="btn btn-default">Submit</button>
+  <table>
+
+    <th>
+      <label for="productName">Product</label>
+    </th>
+    <th>
+      <label for="Quantity">Available Quantity</label>
+    </th>
+    <th>
+      <label for="Quantity">Order Quantity</label>
+    </th>
+
+    <tr *ngFor="let order of orders">
+      <td>
+        <label for="productName">Product: {{order.ProductName}}</label>
+      </td>
+
+      <td>
+        <label class="form-control"> {{order.AvailableQuantity}}</label>
+      </td>
+      <td>
+        <input [(ngModel)]="order.Quantity" type="text" class="form-control">
+      </td>
+      <td>
+        <button type="button" (click)="orderProduct(order);" class="btn btn-default">Submit</button>
+      </td>
+    </tr>
+  </table>

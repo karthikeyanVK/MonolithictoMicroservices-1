@@ -4,10 +4,10 @@
 </p>
 <div class="form-group">
   <label for="productName">Product Name:</label>
-  <input type="text" class="form-control" >
+  <input [(ngModel)]="product.ProductName" type="text" class="form-control" >
 </div>
 <div class="form-group">
   <label for="Quantity">Quantity:</label>
-  <input type="text" class="form-control">
+  <input  [(ngModel)]="product.AvailableQuantity" type="text" class="form-control">
 </div>
 <button type="button" (click)="addProduct();" class="btn btn-default">Submit</button>
