@@ -21,7 +21,7 @@ namespace PetShop.Business
             {
                 OrderId = Guid.NewGuid(),
                 ProductId = order.ProductId,
-                CustomerId = order.CustomerId,
+                CustomerId = PetShopDBConfiguration.DefaultCustomerID,
                 Quantity = order.Quantity
             };
 

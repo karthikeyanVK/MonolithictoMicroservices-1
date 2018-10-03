@@ -4,22 +4,26 @@
 // without the prior written consent of the copyright owner.
 #endregion
 
+using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using PetShop.DBAccess;
 using PetShop.Model;
+using Order = PetShop.DBAccess.Order;
+using Product = PetShop.Model.Product;
 
 namespace PetShop.Business
 {
-    public class SearchService 
+    public class ProductService 
     {
-        public IList<SearchResult> GetData()
+        public IList<Product> GetData()
         {
             using (var context = new PetShopContext())
             {
                 var query = from product in context.Products
                     select
-                        new SearchResult
+                        new Model.Product
                         {
                             ProductId = product.ProductId,
                             ProductName = product.ProductName,
@@ -29,6 +33,24 @@ namespace PetShop.Business
             }
         }
 
-        
+        public bool AddProduct(Product product)
+        {
+            var dbProduct = new DBAccess.Product
+            {
+ 
+                ProductId = product.ProductId,
+                ProductName = product.ProductName,
+                Quantity = product.AvailableQuantity
+            };
+
+            using (var context = new PetShopContext())
+            {
+                context.Products.AddOrUpdate(dbProduct);
+                context.SaveChanges();
+            }
+
+            return true;
+        }
+
     }
 }
