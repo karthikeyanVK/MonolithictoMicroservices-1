@@ -13,7 +13,7 @@ export class ProductService {
     return of(true);
   }
   public getProducts():Observable<boolean> {
-    
+    return of(true);
    
   }
 }
