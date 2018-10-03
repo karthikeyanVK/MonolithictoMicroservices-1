@@ -157,6 +157,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\OrderProductsController.cs" />
+    <Compile Include="Controllers\SearchProductsController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -182,6 +184,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PetShop.Business\PetShop.Business.csproj">
+      <Project>{a5797714-3e97-45f0-89f6-9209f7a92853}</Project>
+      <Name>PetShop.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PetShop.Model\PetShop.Model.csproj">
+      <Project>{264dfff4-8f00-4543-a6ae-93ebf5170470}</Project>
+      <Name>PetShop.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
