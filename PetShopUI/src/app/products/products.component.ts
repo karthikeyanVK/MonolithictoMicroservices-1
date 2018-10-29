@@ -10,8 +10,8 @@ import { Product } from './product';
 export class ProductsComponent implements OnInit {
 
   constructor(private productService: ProductService) { }
-  private addProductResult: boolean;
-  private product: Product;
+  public addProductResult: boolean;
+  public product: Product;
 
   ngOnInit() {
    

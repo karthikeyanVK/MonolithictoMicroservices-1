@@ -41,3 +41,9 @@ testem.log
 .DS_Store
 Thumbs.db
 docker-compose.yml
+
+#demo files
+
+PetShop.API-1
+PetShop.API-AzFunction
+PetShop.API-DB-Divide

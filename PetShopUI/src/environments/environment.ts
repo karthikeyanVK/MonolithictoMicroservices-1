@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  // orderServiceUrl:'http://localhost:7072/',
+  // productServiceUrl:'http://localhost:7071/'
+  orderServiceUrl:'https://petshopordersazfunc.azurewebsites.net/',
+  productServiceUrl:'https://petshopproductsazfunc.azurewebsites.net/'
 };
 
 /*

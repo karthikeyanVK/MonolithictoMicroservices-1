@@ -13,8 +13,8 @@ import { ResourceLoader } from '@angular/compiler';
 export class OrdersComponent implements OnInit {
 
   constructor(private productService: ProductService, private orderService: OrderService) { }
-  private result: boolean;
-  private orders: Order[];
+  public result: boolean;
+  public orders: Order[];
   ngOnInit() {
     this.getProducts();
   }
